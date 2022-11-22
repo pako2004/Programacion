@@ -1,0 +1,189 @@
+/***** reseteo propiedades ***/
+
+*{
+
+    padding: 0;
+    margin: 0;
+
+
+}
+
+/**** LAYOUT ****/
+
+/*** display/position /float ***/
+
+nav li{
+
+    display: inline-block;
+
+}
+header {
+    position: relative;
+}
+
+header img {
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+
+main {
+
+    position: relative;
+
+
+}
+
+main section{
+
+    float:  left;
+}
+
+footer{
+
+
+    clear: left;
+
+}
+
+footer section {
+
+    float: left;
+    
+}
+/*** height/width/padding/border/margin ***/
+nav {
+
+width: 100%;
+
+}
+
+nav ul li {
+    width: 30%;
+
+    padding: 15px 0;
+
+}
+
+header{
+
+ height: 150px;
+border: 2px dotted #fc6423;
+margin: 10px 5px;
+}
+
+header p {
+
+    border: 2px dotted #fc6423;
+    height: 100px;
+    width: 75%;
+
+
+}
+
+header img  {
+
+border: 2px dotted #fc6423; 
+
+
+}
+
+main section {
+
+    width: 45%;
+    padding-left: 1%;
+    border: 2px dotted #c70820;
+    margin-bottom: 10px;
+
+
+}
+
+footer section{
+
+    width: 20%;
+    padding-left: 1%;
+    border: 2px dotted #ffb515;
+
+
+
+}
+
+/*** NAV ***/
+nav {
+
+    text-align: center;
+    background-color: #ffb515;
+
+}
+
+nav li {
+
+    border: 2px dotted #c70820;
+
+}
+
+nav li:hover{
+
+    font-weight: bold;
+    background-color: #c70820;
+}
+
+nav a {
+
+    color: #fc6423;
+    text-decoration: none;
+
+
+
+
+}
+
+/*** Header ***/
+
+header{
+
+    color: #fc6423;
+
+
+}
+
+
+
+/*** MAIN ***/
+
+main section {
+
+
+    color: #c70820;
+}
+
+
+/*** footer **/
+
+footer { 
+
+    color: #ffb515;
+
+
+}
+
+footer ul{
+
+    list-style-type: none;
+}
+
+footer ul li:hover{
+
+    font-weight: bold;
+
+
+}
+
+footer ul li a {
+
+    color: #ffb515;
+
+
+}

@@ -1,0 +1,158 @@
+/* reseteo de propiedades */
+
+*{
+
+    padding: 0;
+    margin: 0;
+
+
+}
+
+/*** BODY ***/
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+
+
+
+
+
+/*** NAV ***/ 
+
+
+
+
+nav {
+
+
+    
+background-image: url(bluePrintPaper.png);
+text-align: center;
+
+margin-top: 1%;
+margin-bottom: 2%;
+outline-color: #184377;
+
+
+}
+nav ul {
+
+
+
+}
+nav ul li  {
+
+
+display: inline-block; /*el valor inline no permite modificar la altura anchura de la corespondiente caja */
+/* es por ello que es necesario utilizar el valor inline-block;*/
+width: 10%;
+
+
+}
+
+nav li:hover{
+
+    font-weight: bold;
+    background-color: #184377;
+
+}
+
+
+
+nav ul li a {
+
+margin: 0 5px; /* TB=0PX RL=5PX*/
+
+font-size: 20px;
+}
+
+
+
+/*** HEADER ***/
+
+header {
+    background-color:  #d0e0f6;
+    position: relative;
+    height: 200px;
+border: 2px dotted #fc6423;
+margin: 10px 5px;
+    
+
+
+}
+
+header img {
+
+    position: absolute;
+    top: 8%;
+    right: 0%;
+}
+
+
+header p {
+
+    width: 30%;
+
+
+}
+
+
+
+/*** ASIDE ***/
+
+aside {
+
+    width: 15%;
+
+
+}
+aside > ul > li {
+
+    list-style-type: circle;
+      
+
+}
+
+
+
+/*** SECTION ***/
+
+section > article  {
+
+    float: left;
+    
+    top: 0% ;
+    right: 0%;
+    padding-bottom: 1;
+    width: 50%;
+    }
+    
+    section h2 {
+    
+    position: relative;
+    
+    }
+    
+
+/*** FOOTER ***/
+
+footer {
+    background-color: #d0e0f6;
+    
+    border: 1px solid red;
+     
+
+    
+
+
+}
+
+
+/* dobujar el contorno de las section dentro del footer
+dibujar el controno de la ul que sean hijas de un section
+dibuja el contorno de las section que tengan un hermano mayor adyacente */
