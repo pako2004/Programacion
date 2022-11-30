@@ -122,22 +122,34 @@ aside > ul > li {
 
 /*** SECTION ***/
 
+section{
+
+    position: relative;
+
+}
+
+
+
 section > article  {
 
-    float: left;
+    position: relative;
     
-    top: 0% ;
-    right: 0%;
+    top: 0 ;
+    right: 0;
     padding-bottom: 1;
     width: 50%;
+    
+
     }
     
     section h2 {
     
     position: relative;
-    
+    top: 0;
+    left: 0;
     }
     
+
 
 /*** FOOTER ***/
 

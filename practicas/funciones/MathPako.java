@@ -1,15 +1,11 @@
 package funciones;
 
+import javax.lang.model.element.ModuleElement.DirectiveVisitor;
+
 public class MathPako {
     public static void main(String[] args) {
         
-      boolean escoco = esCapicua(161);
-
-        if (escoco == true){
-
-          System.out.println("si");
-
-        }
+      
 
     }
      /**
@@ -34,28 +30,36 @@ public class MathPako {
         return resultado;
 
     }
-  
+    /**
+     * Dice si el numero es primo o no
+     * @param numero
+     * @return
+     */
     static boolean esPrimo (int numero){
 
         boolean resultado = true;
 
-        for (int i = 2; i <= numero; i++){
-
-          if ( (numero %  i) == 0){
-
-            resultado = false;
-          }
-
-
+        if (numero == 0 || numero == 1 || numero == 4) {
+          return false;
         }
 
+        for (int x = 2; x < numero / 2; x++) {
+          // Si es divisible por cualquiera de estos números, no
+          // es primo
+          if (numero % x == 0)
+            return false;
+        }
+        // Si no se pudo dividir por ninguno de los de arriba, sí es primo
+        return true;
 
-        return resultado;
+
+
+        
 
     }
 
     /**
-      * Devuelve primo
+      * Devuelve siguiente primo
       * @param numero
       * @return
       */
@@ -65,16 +69,16 @@ public class MathPako {
       
       boolean primo = false;
 
-      while(!primo){
-
-        if (esPrimo(menorPrimo)){
+      while(primo == false){
+        
+        if (esPrimo(menorPrimo) == true){
 
           primo = true;
-
+        }else{ 
+          
           menorPrimo++;
-
-        }else{
         }
+        
       }
       
       return menorPrimo;
@@ -90,20 +94,27 @@ public class MathPako {
      */
     static int potencia(int base, int exponente){
 
-      int resultado = 0;
+      int resultado = base;
       if (exponente == 0){
         resultado = 1;
       }else{  
-       for (int i = 0; i <= exponente; i ++){
+       for (int i = 1; i <= exponente; i++){
 
+        
+        if (i == 1){
+
+        }else{
         resultado = resultado * base;
-
-
+        }
       }
     }
       return resultado;
     }
-
+    /**
+     * Dice cuantos disgitos tiene un numero
+     * @param numero
+     * @return
+     */
     static int digitos(int numero){
 
       int digitos = 0;
@@ -120,7 +131,11 @@ public class MathPako {
       return digitos;
 
     }
-
+    /**
+     * VOleta el numero
+     * @param numero
+     * @return
+     */
     static int voltea (int numero){
 
       int volteado = 0;
@@ -130,7 +145,12 @@ public class MathPako {
       }
       return volteado;
     }
-
+    /**
+     * Indica que numero esta en cierta posicion de un numero dado
+     * @param numero
+     * @param posicion
+     * @return
+     */
     static int digitoAt (int numero, int posicion){
 
       int digito = 0;
@@ -159,7 +179,12 @@ public class MathPako {
 
       return digito;
     }
-
+    /**
+     * Dice donde se encuentra un digito dentro de un numero 
+     * @param numero
+     * @param digito
+     * @return
+     */
     static int posicionDigito (int numero, int digito){
 
       int posicion = 0;
@@ -168,7 +193,7 @@ public class MathPako {
       int volteado = 0;
       boolean encontrado = false;
   
-      voltea(numero);
+      volteado = voltea(numero);
     
     do{
 
@@ -194,64 +219,73 @@ public class MathPako {
       return posicion;
 
     }
-
-    static int quitaPorDetras (int numero){
+    /**
+     * QUitar n digitos por detras a un numero
+     * @param numero
+     * @param quitar
+     * @return
+     */
+    static int quitaPorDetras (int numero, int quitar){
 
       int num = 0;
       int volteado = 0;
-      
-      num = num + (numero /10);
+      int divisor = 10;
+      divisor = MathPako.potencia(divisor, quitar);
+
+      num = (numero /divisor);
       return num;
 
     }
-
-    static int quitaPorDelante (int numero){
+    /**
+     * QUitar n digitos por delante a un numero
+     * @param numero
+     * @param quitar
+     * @return
+     */
+    static int quitaPorDelante (int numero, int quitar){
 
       int num = 0;
-
+      int divisor = 10;
       int volteado = 0;
-      voltea(numero);
+      divisor =  MathPako.potencia(divisor, quitar);
+      numero = voltea(numero);
 
-       volteado = (volteado /10);
-      numero = volteado;
+
+       numero = (numero / divisor);
+      
       
 
-      voltea(numero);
-      num = numero;
+      num = voltea(numero);
+      
       return num;
 
     }
-
+    /**
+     * Quitar n digitos por detras
+     * @param numero
+     * @param digito
+     * @return
+     */
     static int pegaPorDetras (int numero, int digito){
 
-      
-
-      int volteado = 0;
-      voltea(numero);
-      String sA = String.valueOf(digito);
-      String sB = String.valueOf(volteado);
-
-      String res = sA + sB;
-
-      int resultado = Integer.parseInt(res); 
-      voltea(resultado);
-      
-
+        int resultado = MathPako.juntaNumeros(numero, digito);
 
       return resultado;
 
     }
-
+    /**
+     * Pega un numero a u numero ya dado por delante
+     * @param numero
+     * @param digito
+     * @return
+     */
     static int pegaPorDelante (int numero, int digito){
 
-      String sA = String.valueOf(digito);
-      String sB = String.valueOf(numero);
+      numero = voltea(numero);
 
-      String res = sA + sB;
+      int resultado = juntaNumeros(numero, digito);
 
-      int resultado = Integer.parseInt(res);
-
-
+      resultado = voltea(resultado);
 
       return resultado;
     }
@@ -259,14 +293,14 @@ public class MathPako {
     static int trozoDeNumero (int numero, int inicio, int cierre){
       int resultado = 0;
 
-      voltea(numero);
+      numero = voltea(numero);
 
       while (inicio > 0){
         numero = (numero /10);
         inicio--;
       }
 
-      voltea(numero);
+      numero = voltea(numero);
 
       while (cierre > 0){
         numero = (numero /10);
@@ -308,15 +342,10 @@ public class MathPako {
   }
 
   static int juntaNumeros (int numero1, int numero2 ){
-    String sA = String.valueOf(numero1);
-      String sB = String.valueOf(numero2);
-
-      String res = sA + sB;
-
-      int resultado = Integer.parseInt(res);
-
-
-
+    
+      int añade = numero1 * (potencia(10, digitos(numero2)));
+      int resultado = añade +  numero2;
+      
       return resultado;
 
 
