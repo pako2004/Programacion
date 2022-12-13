@@ -52,12 +52,12 @@ public class PartidoBaloncesto {
 
         int tiro = 0;
         int fuap = (int)Math.random()*100;
-
-        if (fuap <= E1_JUEGA_DE_2){
-            tiro = 2;
-        }else{
-            tiro = 3;
-        }
+        
+            if (fuap <= E1_JUEGA_DE_2){
+                tiro = 2;
+            }else{
+                tiro = 3;
+            }
         return tiro;
 
     } 
@@ -72,20 +72,83 @@ public class PartidoBaloncesto {
 
         if (turno.equals("E1")){
          tiro = tipoTiro(E1_JUEGA_DE_2);
-        }else{
+        }else if (turno.equals("E2")){
             tiro = tipoTiro(E2_JUEGA_DE_2);
         }
 
         return tiro;
     }
+    /*canasta(tipoTiro, porcentaje) ---> dado un tipo de tiro y el % de acierto devuelve true si hay canasta y false si no     
+    xx tipoTiro() --> devuelve el tipo de tiro que va a realizar el equipo (tiro2 o tiro3)
+    xx tipoTiro(int porcentaje2, int porcentaje3) -> devuelve el tipo de tiro que se produce según los porcentajes indicados
+    rebote(String equipoAtaque) ---> devuelve E1 si el rebote lo gana E1 y E2 si el rebote lo gana E2*/
 
-    static int canasta (int tipoTiro, int pocentaje){
+    static int canasta (int tipoTiro){
+        int cesta = 0;
+        if(tipoTiro == 2){
 
-        if()
-
+            int prob = aleatorio(1,100);
+            if (prob > E2_ACIERTO_2){
+                cesta = 2;
+            }
+            
+            if (prob > E2_ACIERTO_3){
+                cesta = 3;
+            } 
+            
+        }
+        return cesta;
 
     }
+    /**
+     * Devuelve el valor de la canasta
+     * @param turno
+     * @return
+     */
+    static String canasta(String turno){
 
+        String cesta = "";
+
+        if (turno == "E1"){
+            int tiro = canasta(tipoTiro(turno));
+            cesta = ""+tiro;
+        }
+        if (turno =="E2"){
+            int tiro = canasta(tipoTiro(turno));
+            cesta =""+tiro;
+
+        }
+        return cesta;
+    }
+    /**
+     * suma dos parametros
+     * @param valorAcumulado
+     * @param valorAIncrementar
+     * @return
+     */
+    static int actualizadorPuntos  (int valorAcumulado, int valorAIncrementar){
+
+        int resultado = valorAcumulado+valorAIncrementar;
+
+        return resultado;
+
+    }
+    static String rebote(String equipoAtaque){
+
+        String ganador = "";
+
+        int def1 = aleatorio(E1_REBOTE_DEF);
+        int ata1 = aleatorio(E1_REBOTE_ATA);
+        int def2 = aleatorio(E2_REBOTE_DEF);
+        int ata2 = aleatorio(E2_REBOTE_ATA);
+
+        
+
+
+
+
+        return ganador
+    }
 
     //Variables de los equipos
     final static int E1_ACIERTO_2 = 70;
