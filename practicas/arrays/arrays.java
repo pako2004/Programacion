@@ -53,5 +53,9 @@ public class arrays {
     d[4]=10;
     System.out.println("Array e en la posicion 4 "+e[4]);
     System.out.println();
+
+
+
+    
     }   
 }
