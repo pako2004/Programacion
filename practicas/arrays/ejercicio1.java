@@ -22,7 +22,7 @@ public class ejercicio1 {
      * 5- llenar con "POsicion-x" todo el array
      */
 
-    String[] nombre = new String[9];
+    String[] nombre = new String[10];
 
     nombre[0] = "Luis";
     nombre[1] = "María";
@@ -45,12 +45,12 @@ public class ejercicio1 {
 
 
             case 1: //LIMPIAR ARRAY
-                nombre[] = limpiarArray(nombre[]); 
+                limpiarArray(nombre); 
                 break;
             case 2: //almacenar nombre en posicion
                     
             System.out.println("Que nombre desea insertar?");
-            String name = sc.nextLine();
+            String name = sc1.nextLine();
             System.out.println("Que posicion desea cambiar?");
             int posicion = sc.nextInt();
 
@@ -58,12 +58,17 @@ public class ejercicio1 {
 
                 break;
             case 3:
+                imprimir(nombre);
                 break;
             case 4:
+                borrar(nombre);
                 break;
             case 5:
+            llenar(nombre);
                 break;
             case 6:
+                salir = true;
+                System.out.println("Hasta luego");
                 break;
         }
 
@@ -76,6 +81,7 @@ public class ejercicio1 {
 
     }
     static Scanner sc = new Scanner(System.in);
+    static Scanner sc1 = new Scanner(System.in);
     static int menu(){
         System.out.println("---- Menú Array ----");
         System.out.println("1- Limpiar array");  
@@ -112,8 +118,48 @@ public class ejercicio1 {
     static void imprimir(String[] tabla){
         int i = 0;
         for (String nombre : tabla){
-            System.out.println("El nombre en la posicion "+ i+"es "+ nombre);
+            System.out.println("El nombre en la posicion "+ i+" es "+ nombre);
             i++;
         }
+
+        /* mostrar un arrays
+         * 
+         * Sout(Arrays.toString(tabla))
+         */
+    }
+    /**
+     * borra de un aray una posicion en concreto
+     * @param tabla
+     */
+    static void borrar(String[] tabla){
+
+        System.out.println("Que posicion quieres borrar?");
+        int posicion = sc.nextInt();
+
+        tabla[posicion] = null;
+        System.out.println("Nombre borrado correctamente");
+
+        if (tabla.length < posicion && posicion < 0){
+            tabla[posicion] = null;
+            System.out.println("Nombre borrado correctamente");
+        }else{
+            System.out.println("Error - Posicion Fuera de rango");
+        }
+    }
+    
+    static void llenar(String[] tabla){
+        
+        for(int i = 0; i < tabla.length; i++){
+            tabla[i] = "Posicion - "+i;
+        }
+
+        /*otra forma de llenar
+         * Arrays.fill(tabla,"NOMBRE");
+         */
+        /*LLENAR INTERVALOS DE POSICIONES
+         * 
+         *  Arrays.fill(tabla,5,6,"PAKO")
+         * 
+         */
     }
 }  
