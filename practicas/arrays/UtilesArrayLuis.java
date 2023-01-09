@@ -3,10 +3,7 @@ package arrays;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import javax.print.attribute.standard.NumberOfInterveningJobs;
-import javax.print.event.PrintEvent;
-import javax.swing.text.Position;
-import javax.xml.validation.Validator;
+
 
 public class UtilesArrayLuis {
     
