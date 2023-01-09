@@ -1,0 +1,66 @@
+
+*{
+
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+
+/******* NAV ******/
+
+.navegador{
+    background-color: rgb(32, 32, 32);
+    height: 40px;
+}
+.navegador li{
+    padding-left: 5px;
+    padding-top: 10px;
+    display: inline-block;
+    text-align: center;
+}
+.navegador li a{
+
+    color: rgb(212, 204, 204);
+    font-weight: bold;
+    text-decoration: none;
+    padding-right: 30px;
+}
+
+
+
+/********** HEADER **********/
+
+header{
+    background-color: rgb(75, 140, 238);
+}
+
+
+
+/********* BODY *********/
+body {
+    background-color:  rgb(255, 115, 0);
+}
+
+aside{
+    float: left;
+    background-color: rgb(255, 255, 255);
+    margin-right: 30px;
+    width: 23%;
+    padding: 2% 0% 2% 2% ;
+    
+    text-align: left;
+}
+
+aside h3{
+
+    background-color: rgb(161, 221, 255);
+    padding-right: 5px;
+}
+
+
+/***** FOOTER *****/
+
