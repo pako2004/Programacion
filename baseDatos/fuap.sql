@@ -28,7 +28,7 @@ create table articulo (
     precio number (5,2);
 )
 
-create table art_ped(
+create table art_fact(
     cod_ped int;
     cod_art int;
     cantidad int;
