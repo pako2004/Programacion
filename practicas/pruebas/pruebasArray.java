@@ -10,10 +10,10 @@ public class pruebasArray {
         //int[] array = null;
 
         UtilesArrayLuis.rellenar(array,10);
-
+         
         UtilesArrayLuis.imprimir(array);
 
-        array =UtilesArrayLuis.limpiar();
+        //array =UtilesArrayLuis.limpiar();
 
         array =UtilesArrayLuis.insertaAlInicio(array, 10);
 
@@ -52,7 +52,7 @@ public class pruebasArray {
         array =UtilesArrayLuis.partirPor(array, 1,3);
 
         UtilesArrayLuis.imprimir(array);
-
+        
 
 
 
