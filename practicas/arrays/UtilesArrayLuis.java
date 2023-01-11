@@ -334,6 +334,11 @@ static Scanner sc = new Scanner(System.in);
         }
         
     }
+    public static void aleatorio(int[] array, int rango){
 
-
+            for (int i = 0; i < array.length; i++){
+                array[i] = (int)(Math.random()*rango);
+            }
+    
+        }
 }
